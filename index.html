@@ -4,7 +4,12 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
   <body style='margin : 0px; overflow: hidden;'>
         <a-scene embedded arjs='sourceType: webcam;'>
-                 <a-gltf-model src="busterDrone.gltf" position="0 0 0" rotation="0 0 0" scale="0.01 0.01 0.01" animation-mixer="clip: Take 001; loop:once"> </a-gltf-model>
+                <a-assets>
+                        <a-asset-item id="ship-obj" src="Avent.obj"></a-asset-item>
+                        <a-asset-item id="ship-mtl" src="Avent.mtl"></a-asset-item>
+                </a-assets>
+                <!-- Using the asset management system. -->
+                <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position="0 0 0" scale="1 1 1"></a-entity>
                 <a-marker-camera preset='hiro'></a-marker-camera>
          </a-scene>
   </body>
